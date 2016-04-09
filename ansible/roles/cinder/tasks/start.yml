@@ -3,6 +3,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "cinder-api"
     name: "cinder_api"
     image: "{{ cinder_api_image_full }}"
     volumes:
@@ -14,6 +17,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "cinder-scheduler"
     name: "cinder_scheduler"
     image: "{{ cinder_scheduler_image_full }}"
     volumes:
@@ -25,6 +31,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "cinder-volume"
     name: "cinder_volume"
     image: "{{ cinder_volume_image_full }}"
     privileged: True
@@ -39,6 +48,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "cinder-backup"
     name: "cinder_backup"
     image: "{{ cinder_backup_image_full }}"
     privileged: True
