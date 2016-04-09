@@ -3,6 +3,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "ceph-rgw"
     image: "{{ ceph_rgw_image_full }}"
     name: "ceph_rgw"
     volumes: "{{ node_config_directory }}/ceph-rgw/:{{ container_config_directory }}/:ro"
