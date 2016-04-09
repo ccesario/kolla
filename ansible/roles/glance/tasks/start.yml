@@ -3,6 +3,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "glance-registry"
     image: "{{ glance_registry_image_full }}"
     name: "glance_registry"
     volumes:
@@ -14,6 +17,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "glance-api"
     image: "{{ glance_api_image_full }}"
     name: "glance_api"
     volumes:
