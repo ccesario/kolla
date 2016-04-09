@@ -5,6 +5,7 @@
     common_options: "{{ docker_common_options }}"
     environment:
       KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "heka"
       SKIP_LOG_SETUP: "true"
     image: "{{ heka_image_full }}"
     name: "heka"
@@ -19,6 +20,7 @@
     action: "start_container"
     common_options: "{{ docker_common_options }}"
     environment:
+      KOLLA_SERVICE_NAME: "kolla-toolbox"
       ANSIBLE_NOCOLOR: "1"
       ANSIBLE_LIBRARY: "/usr/share/ansible"
     image: "{{ ansible_image_full }}"
@@ -33,6 +35,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "cron"
     image: "{{ cron_image_full }}"
     name: "cron"
     volumes:
