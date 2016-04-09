@@ -1,0 +1,3 @@
+
+#### Custom data added by Kolla
+PS1="(docker::${KOLLA_SERVICE_NAME})[\u@\h \W]\\$ "
