@@ -3,6 +3,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "ironic-pxe"
     name: "ironic_pxe"
     image: "{{ ironic_pxe_image_full }}"
     volumes:
@@ -14,6 +17,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "ironic-api"
     image: "{{ ironic_api_image_full }}"
     name: "ironic_api"
     volumes: "{{ node_config_directory }}/ironic-api/:{{ container_config_directory }}/:ro"
@@ -23,6 +29,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "ironic-conductor"
     image: "{{ ironic_conductor_image_full }}"
     name: "ironic_conductor"
     volumes:
@@ -34,6 +43,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "ironic-inspector"
     image: "{{ ironic_inspector_image_full }}"
     name: "ironic_inspector"
     privileged: True
