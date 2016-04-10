@@ -196,6 +196,6 @@ RUN touch /usr/local/bin/kolla_extend_start \
 COPY kolla_bashrc /tmp/
 RUN cat /tmp/kolla_bashrc >> /etc/bash.bashrc
 RUN cat /tmp/kolla_bashrc >> ~/.bashrc
-RUN rm -f /tmp/kolla_bashrc
+#RUN rm -f /tmp/kolla_bashrc
 
 CMD ["kolla_start"]
