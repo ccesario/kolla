@@ -33,7 +33,7 @@
     common_options: "{{ docker_common_options }}"
     environment:
       KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
-      KOLLA_SERVICE_NAME: "ceph-osd"
+      KOLLA_SERVICE_NAME: "ceph-osd-{{ item.0.stdout }}"
       OSD_ID: "{{ item.0.stdout }}"
       JOURNAL_PARTITION: "{{ item.1.journal }}"
     image: "{{ ceph_osd_image_full }}"
