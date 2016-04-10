@@ -4,6 +4,9 @@
     action: "start_container"
     name: "mistral_engine"
     common_options: "{{docker_common_options}}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "mistral-engine"
     image: "{{ mistral_engine_image_full }}"
     volumes:
       - "{{ node_config_directory }}/mistral-engine/:{{ container_config_directory }}/:ro"
@@ -15,6 +18,9 @@
     action: "start_container"
     name: "mistral_executor"
     common_options: "{{docker_common_options}}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "mistral-executor"
     image: "{{ mistral_executor_image_full }}"
     volumes:
       - "{{ node_config_directory }}/mistral-executor/:{{ container_config_directory }}/:ro"
@@ -26,6 +32,9 @@
     action: "start_container"
     name: "mistral_api"
     common_options: "{{docker_common_options}}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "mistral-api"
     image: "{{ mistral_api_image_full }}"
     volumes:
       - "{{ node_config_directory }}/mistral-api/:{{ container_config_directory }}/:ro"
