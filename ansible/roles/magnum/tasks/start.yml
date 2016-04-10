@@ -3,6 +3,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "magnum-api"
     image: "{{ magnum_api_image_full }}"
     name: "magnum_api"
     volumes:
@@ -14,6 +17,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "magnum-conductor"
     image: "{{ magnum_conductor_image_full }}"
     name: "magnum_conductor"
     volumes:
