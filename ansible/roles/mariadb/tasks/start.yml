@@ -3,6 +3,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "mariadb"
     image: "{{ mariadb_image_full }}"
     name: "mariadb"
     volumes:
