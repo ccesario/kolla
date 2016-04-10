@@ -35,6 +35,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-rsyncd"
     image: "{{ swift_rsyncd_image_full }}"
     name: "swift_rsyncd"
     volumes:
@@ -49,6 +52,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-account-server"
     name: "swift_account_server"
     image: "{{ swift_account_image_full }}"
     volumes:
@@ -62,6 +68,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-account-editor"
     image: "{{ swift_account_image_full }}"
     name: "swift_account_auditor"
     volumes:
@@ -75,6 +84,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-account-replicator"
     image: "{{ swift_account_image_full }}"
     name: "swift_account_replicator"
     volumes:
@@ -88,6 +100,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-account-reaper"
     image: "{{ swift_account_image_full }}"
     name: "swift_account_reaper"
     volumes:
@@ -101,6 +116,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-container-server"
     image: "{{ swift_container_image_full }}"
     name: "swift_container_server"
     volumes:
@@ -114,6 +132,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-container-auditor"
     image: "{{ swift_container_image_full }}"
     name: "swift_container_auditor"
     volumes:
@@ -127,6 +148,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-container-replicator"
     image: "{{ swift_container_image_full }}"
     name: "swift_container_replicator"
     volumes:
@@ -140,6 +164,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-container-updater"
     image: "{{ swift_container_image_full }}"
     name: "swift_container_updater"
     volumes:
@@ -153,6 +180,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-object-server"
     image: "{{ swift_object_image_full }}"
     name: "swift_object_server"
     volumes:
@@ -166,6 +196,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-object-auditor"
     image: "{{ swift_object_image_full }}"
     name: "swift_object_auditor"
     volumes:
@@ -179,6 +212,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-object-replicator"
     image: "{{ swift_object_image_full }}"
     name: "swift_object_replicator"
     volumes:
@@ -192,6 +228,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-object-updater"
     image: "{{ swift_object_image_full }}"
     name: "swift_object_updater"
     volumes:
@@ -205,6 +244,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-object-expirer"
     image: "{{ swift_object_image_full }}"
     name: "swift_object_expirer"
     volumes:
@@ -218,6 +260,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "swift-proxy-server"
     image: "{{ swift_proxy_server_image_full }}"
     name: "swift_proxy_server"
     volumes:
