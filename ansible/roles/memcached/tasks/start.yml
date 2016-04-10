@@ -3,6 +3,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "memcached"
     image: "{{ memcached_image_full }}"
     name: "memcached"
     volumes: "{{ node_config_directory }}/memcached/:{{ container_config_directory }}/:ro"
