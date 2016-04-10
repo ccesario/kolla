@@ -3,6 +3,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "nova-api"
     image: "{{ nova_api_image_full }}"
     name: "nova_api"
     privileged: True
@@ -16,6 +19,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "nova-consoleauth"
     image: "{{ nova_consoleauth_image_full }}"
     name: "nova_consoleauth"
     volumes:
@@ -27,6 +33,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "nova-novncproxy"
     image: "{{ nova_novncproxy_image_full }}"
     name: "nova_novncproxy"
     volumes:
@@ -40,6 +49,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "nova-scheduler"
     image: "{{ nova_scheduler_image_full }}"
     name: "nova_scheduler"
     volumes:
@@ -51,6 +63,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "nova-spicehtml5proxy"
     image: "{{ nova_spicehtml5proxy_image_full }}"
     name: "nova_spicehtml5proxy"
     volumes:
