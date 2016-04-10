@@ -194,8 +194,9 @@ RUN touch /usr/local/bin/kolla_extend_start \
 
 # Customize PS1 to be used with bash shell
 COPY kolla_bashrc /tmp/
+RUN cat /tmp/kolla_bashrc >> /etc/skel/.bashrc
 RUN cat /tmp/kolla_bashrc >> /etc/bash.bashrc
-RUN cat /tmp/kolla_bashrc >> ~/.bashrc
-#RUN rm -f /tmp/kolla_bashrc
+RUN cat /tmp/kolla_bashrc >> /root/.bashrc
+RUN rm -f /tmp/kolla_bashrc
 
 CMD ["kolla_start"]
