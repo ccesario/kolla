@@ -3,6 +3,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "nova-conductor"
     name: "nova_conductor"
     image: "{{ nova_conductor_image_full }}"
     volumes:
