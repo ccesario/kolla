@@ -3,6 +3,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "nova-libvirt"
     image: "{{ nova_libvirt_image_full }}"
     name: "nova_libvirt"
     pid_mode: "host"
@@ -21,6 +24,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "nova-compute"
     image: "{{ nova_compute_image_full }}"
     name: "nova_compute"
     privileged: True
@@ -39,6 +45,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "nova-compute-ironic"
     image: "{{ nova_compute_ironic_image_full }}"
     name: "nova_compute_ironic"
     volumes:
@@ -52,6 +61,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "nova-compute-fake-{{ item }}"
     image: "{{ nova_compute_image_full }}"
     name: "nova_compute_fake_{{ item }}"
     privileged: True
@@ -69,6 +81,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "nova-ssh"
     image: "{{ nova_ssh_image_full }}"
     name: "nova_ssh"
     volumes:
