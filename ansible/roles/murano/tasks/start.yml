@@ -3,6 +3,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "murano-engine"
     image: "{{ murano_engine_image_full }}"
     name: "murano_engine"
     volumes:
@@ -14,6 +17,9 @@
   kolla_docker:
     action: "start_container"
     common_options: "{{ docker_common_options }}"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "murano-api"
     image: "{{ murano_api_image_full }}"
     name: "murano_api"
     volumes:
