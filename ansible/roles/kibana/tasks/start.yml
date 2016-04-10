@@ -2,6 +2,9 @@
 - name: Starting Kibana container
   kolla_docker:
     action: "start_container"
+    environment:
+      KOLLA_CONFIG_STRATEGY: "{{ config_strategy }}"
+      KOLLA_SERVICE_NAME: "kibana"
     common_options: "{{ docker_common_options }}"
     image: "{{ kibana_image_full }}"
     name: "kibana"
